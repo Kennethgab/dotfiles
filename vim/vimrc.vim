@@ -95,5 +95,5 @@
 
 " Future stuff
 	"Swap line
-	"Insert blank below and above
-
+	"Insert blank below and above:
+execute pathogen#infect()
