@@ -50,3 +50,7 @@ if [[ "${terminfo[kcud1]}" != "" ]]; then
 fi
 
 source ~/dotfiles/zsh/prompt.sh
+
+#export PATH="/mnt/c/Users/Kenneth/Anaconda3:$PATH"
+#export PATH="/mnt/c/Users/Kenneth/Anaconda3/Scripts:$PATH"
+
