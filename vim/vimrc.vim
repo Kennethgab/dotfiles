@@ -97,3 +97,6 @@
 	"Swap line
 	"Insert blank below and above:
 execute pathogen#infect()
+set background=dark
+let g:solarized_termtrans = 1 " This gets rid of the grey background
+colorscheme solarized
