@@ -58,6 +58,7 @@ endif
 	" Java
 		inoremap <leader>sys <esc>ISystem.out.println(<esc>A);
 		vnoremap <leader>sys yOSystem.out.println(<esc>pA);
+		autocmd Filetype java,java inoremap <leader>main <esc>Ipublic<space>class<space><c-r>%<esc>bbdwdwA{<enter><enter>public<space>static<space>void<space>main(String[]<space>args)<space>{<enter><enter>}<enter><enter>}
 
 	" Java
 		inoremap <leader>con <esc>Iconsole.log(<esc>A);
