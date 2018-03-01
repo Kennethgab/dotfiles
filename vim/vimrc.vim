@@ -102,6 +102,10 @@ let g:solarized_termtrans = 1 " This gets rid of the grey background
 
 colorscheme solarized
 
+"PYTHON
+	autocmd Filetype py inoremap <leader>pri Iprint(<esc>A)
+
+	autocmd Filetype py inoremap ;s ~~~~<++><Esc>F~hi
 
 "MARKDOWN
 	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
