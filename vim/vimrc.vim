@@ -11,6 +11,16 @@
 	set cursorline
 	hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
+
+
+if has ('autocmd')
+	augroup vimrc
+		autocmd! BufWritePost $MYVIMRC source % | echom "Reloaded " . $MYVIMRC | redraw
+	augroup END
+endif
+
+
+
 	set hlsearch
 	nnoremap <C-l> :nohl<CR><C-l>:echo "Search Cleared"<CR>
 	nnoremap <C-c> :set norelativenumber<CR>:set nonumber<CR>:echo "Line numbers turned off."<CR>
@@ -103,9 +113,11 @@ let g:solarized_termtrans = 1 " This gets rid of the grey background
 colorscheme solarized
 
 "PYTHON
-	autocmd Filetype py inoremap <leader>pri Iprint(<esc>A)
+	autocmd Filetype python,py inoremap ;pri <esc>Iprint(<esc>A)
 
-	autocmd Filetype py inoremap ;s ~~~~<++><Esc>F~hi
+	autocmd Filetype python,py inoremap ;js <esc>I"<esc>ea":<esc>wi"<esc>A",
+	autocmd Filetype python,py inoremap ;ran <esc>Ifor<space>i<space>in<space>range(<esc>A):<enter>
+
 
 "MARKDOWN
 	autocmd Filetype markdown,rmd map <leader>w yiWi[<esc>Ea](<esc>pa)
@@ -121,7 +133,7 @@ colorscheme solarized
 	autocmd Filetype markdown,rmd inoremap ;3 ###<Space><Enter><++><Esc>kA
 	autocmd Filetype markdown,rmd inoremap ;l --------<Enter>
 	autocmd Filetype markdown map <F5> :!pandoc.exe<space><C-r>%<space>-o<space><C-r>%.pdf<Enter><Enter>
-	autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R.exe<space>--vanilla<enter>
+	autocmd Filetype rmd map <F5> :!echo<space>"Sys.setlocale(, 'Norwegian');<space>require(rmarkdown);<space>render(input<space>=<space>'<c-r>%',encoding<space>=<space>'UTF-8')"<space>\|<space>R.exe<space>--vanilla<enter>
 	autocmd Filetype rmd inoremap ;r ```{r}<CR>```<CR><CR><esc>2kO
     autocmd Filetype rmd inoremap ;p ```{python}<CR>```<CR><CR><esc>2kO
 
